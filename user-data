@@ -2,12 +2,14 @@
 
 ---
 coreos:
+  update:
+    reboot-strategy: 'off'
   etcd2:
     advertise-client-urls: http://$public_ipv4:2379
     initial-advertise-peer-urls: http://$private_ipv4:2380
     listen-client-urls: http://0.0.0.0:2379,http://0.0.0.0:4001
     listen-peer-urls: http://$private_ipv4:2380,http://$private_ipv4:7001
-    discovery: https://discovery.etcd.io/e75c83fbb2f1f54cc0d05b1de02db256
+    discovery: https://discovery.etcd.io/330a87b1b512fc6a6baf8ed5d67bf7c0
   fleet:
     public-ip: $public_ipv4
   flannel:
